@@ -3,8 +3,7 @@
   <img src="./Plot_FreeNet.svg" alt="Free Network Network Map" width="49%" />
 </p>
 
-<span style="color:red">
-[System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
+<span style="color:red">[System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
 ### NETWORK INTEGRITY & DATUM AUDIT
 
 #### Fixed Benchmarks (`dfFixed`)
@@ -103,8 +102,7 @@ None
 ==================================================
 </span>
 
-<span style="color:red">
-[System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
+<span style="color:red">[System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
 ### NETWORK INTEGRITY & DATUM AUDIT
 
 #### Fixed Benchmarks (`dfFixed`)

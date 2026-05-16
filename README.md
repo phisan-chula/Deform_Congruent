@@ -3,6 +3,7 @@
   <img src="./Plot_FreeNet.svg" alt="Free Network Network Map" width="49%" />
 </p>
 
+<span style="color:red">
 [System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
 ### NETWORK INTEGRITY & DATUM AUDIT
 
@@ -35,7 +36,7 @@
 |        7 | Z         | Y       |    4.82  |      2    |
 
 [System] Initializing Least Squares Engine optimization routines...
-
+```text
 ==================================================
     LMFIT ENGINE REPORT (CONSTRAINED ADJUSTMENT)    
 ==================================================
@@ -100,7 +101,9 @@ None
 | Z         |             99.0726 |       19.5  | ADJUSTED |
 
 ==================================================
+</span>
 
+<span style="color:red">
 [System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
 ### NETWORK INTEGRITY & DATUM AUDIT
 
@@ -198,4 +201,4 @@ None
 | Z         |             96.7848 |       11.22 | FREENET |
 
 ==================================================
-
+</span>

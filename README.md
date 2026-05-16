@@ -35,7 +35,7 @@
 |        7 | Z         | Y       |    4.82  |      2    |
 
 [System] Initializing Least Squares Engine optimization routines...
-```text
+
 ==================================================
     LMFIT ENGINE REPORT (CONSTRAINED ADJUSTMENT)    
 ==================================================
@@ -101,6 +101,7 @@ None
 
 ==================================================
 </span>
+
 
 <span style="color:red">[System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
 ### NETWORK INTEGRITY & DATUM AUDIT

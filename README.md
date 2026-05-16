@@ -35,7 +35,7 @@
 |        7 | Z         | Y       |    4.82  |      2    |
 
 [System] Initializing Least Squares Engine optimization routines...
-<span style="color:red">
+```bash
 ==================================================
     LMFIT ENGINE REPORT (CONSTRAINED ADJUSTMENT)    
 ==================================================
@@ -62,7 +62,7 @@
     C(Y, B) = +0.4477
     C(Z, X) = +0.4417
 None
-
+```
 #### ADJUSTED GEODETIC ELEVATIONS
 | Station   |   Adjusted_Height_m | StdDev_mm      |
 |:----------|--------------------:|:---------------|
@@ -100,7 +100,7 @@ None
 | Z         |             99.0726 |       19.5  | ADJUSTED |
 
 ==================================================
-</span>
+
 
 
 [System] Ingesting source architecture layout: DEAKIN/Deakin_Free.toml
@@ -134,7 +134,8 @@ None
 |        7 | Z         | Y       |    4.82  |      2    |
 
 [System] Initializing Least Squares Engine optimization routines...
-<span style="color:red">
+
+```bash
 ==================================================
     LMFIT ENGINE REPORT (FREE NETWORK ADJUSTMENT)    
 ==================================================
@@ -162,7 +163,7 @@ None
     C(Y, Z) = -0.3482
     C(B, Z) = +0.2270
 None
-
+```
 #### ADJUSTED GEODETIC ELEVATIONS
 | Station   |   Adjusted_Height_m | StdDev_mm        |
 |:----------|--------------------:|:-----------------|

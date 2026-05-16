@@ -75,7 +75,8 @@ None
 ==================================================
 
 #### OBSERVATION ADJUSTMENT & TOLERANCE AUDIT
-> Tolerance Rule: abs(Residual_mm) > 12.0 * √(Dist_km)
+Tolerance Rule: abs(Residual_mm) > 12.0 * √(Dist_km)
+
 |   LineNo | StaFrom   | StaTo   |   Diff_m |   Dist_km | Residual_mm    | Allowable_Tol_mm   | Remark     |
 |---------:|:----------|:--------|---------:|----------:|:---------------|:-------------------|:-----------|
 |        1 | A         | X       |    6.345 |      1.6  | -9.23          | ±15.18             |            |
@@ -89,7 +90,7 @@ None
 ==================================================
 
 #### EXPORTED DATA STATIONS LOG SUMMARY
-> Successfully transformed results file written to: adjusted_stations.csv
+Successfully transformed results file written to: adjusted_stations.csv
 
 | Station   |   Adjusted_Height_m |   StdDev_mm | type     |
 |:----------|--------------------:|------------:|:---------|

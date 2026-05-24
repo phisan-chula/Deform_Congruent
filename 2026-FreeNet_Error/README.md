@@ -40,7 +40,10 @@ This software implementation relies on the following core components:
 *   **`lmfit`**: An advanced Python package utilized for robust least-squares adjustments.
 *   **`numpy`**: Employed for matrix computations, specifically leveraging the **Moore-Penrose pseudo-inverse** ($N^+$) to solve the rank-deficient system of equations.
 
-The mathematical core closely follows the linear algebra framework established by **Dr. Deakin** for solving network adjustments subject to inner constraints, as thoroughly demonstrated in his article.
+The mathematical core closely follows the linear algebra framework established by **Dr. Deakin** for solving network adjustments subject to inner constraints, as thoroughly demonstrated in his article
+
+## References
+*   Deakin, R. E. *Free Net Level Adjustment: Notes on the application of inner constraints to overcome datum deficiency problems in level network adjustments.* [myGeodesy](http://www.mygeodesy.id.au/).
 
 | Points | Network Type | Sum(X) (m) | L2-Norm (m) | Trace(Qxx) |
 | :---:  | :---        | :---:      | :---:       | :---:      |

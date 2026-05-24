@@ -1,4 +1,32 @@
-GEODETIC NETWORK ADJUSTMENT DIAGNOSTIC SUMMARY:
+GEODETIC FREE NETWORK ADJUSTMENT:
+
+### Theoretical Properties of Free Network Adjustment
+
+The **Free Network Adjustment** (or Minimum Norm Least Squares) method uniquely solves the rank-deficient system by imposing a minimum-norm condition on the parameter corrections. This optimization satisfies three distinct mathematical criteria:
+
+#### 1. Minimum Parameter Corrections ($L_2\text{-Norm}$)
+The solution minimizes the sum of squares of the estimated coordinate changes. The objective function minimizes the $L_2\text{-norm}$:
+
+$$\min \|\hat{X}\|_2^2 = \min \left( \hat{X}^T \hat{X} \right) = \min \sum_{i=1}^{u} \hat{x}_i^2$$
+
+Where:
+*   $\hat{X}$ is the vector of coordinate corrections.
+*   $u$ is the number of parameters.
+
+#### 2. Sum of the Coordinate Changes
+Under the inner constraints ($B^T \hat{X} = 0$), the algebraic sum of the corrections for each datum transformation component equals zero:
+
+$$\sum \hat{X} = 0$$
+
+#### 3. Minimum Trace of the Datum Cofactor Matrix
+The configuration of the datum minimizes the overall variance of the network parameters. The trace of the estimated parameter cofactor matrix $Q_{xx}$ achieves its theoretical minimum:
+
+$$\min \text{Tr}(Q_{xx}) = \min \sum_{i=1}^{u} q_{x_i x_i}$$
+
+Where:
+*   $Q_{xx}$ is the pseudo-inverse of the normal equations matrix ($N^+$).
+*   $q_{x_i x_i}$ represents the variance factors of the adjusted coordinates.
+
 
 <p align="center">
   <img src="DeakFreenet.png" alt="FreeNet Deakin All Plot">

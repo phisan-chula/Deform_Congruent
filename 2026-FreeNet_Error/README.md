@@ -1,5 +1,5 @@
 ### GEODETIC FREE NETWORK ADJUSTMENT:  
-An example of FREE LEVEL NET ADJUSTMENT, Dr. Rod Deaking , RMIT, Australia  
+An example of FREE LEVEL NET ADJUSTMENT, Dr. Rod Deakin , RMIT, Australia  
 Reanalyzed by Dr.-Ing Phisan Santitamnont,  Chulalongkorn University, Thailand  
 
 ### Theoretical Properties of Free Network Adjustment

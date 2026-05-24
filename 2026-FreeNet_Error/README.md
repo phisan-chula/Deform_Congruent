@@ -40,7 +40,8 @@ This software implementation relies on the following core components:
 *   **`lmfit`**: An advanced Python package utilized for robust least-squares adjustments.
 *   **`numpy`**: Employed for matrix computations, specifically leveraging the **Moore-Penrose pseudo-inverse** ($N^+$) to solve the rank-deficient system of equations.
 
-The original mathematical core closely follows the linear algebra framework established by **Dr. Deakin** for solving network adjustments subject to **inner constraints,** as thoroughly demonstrated in his article , see Reference
+The original mathematical core closely follows the linear algebra framework established by **Dr. Deakin** for solving network adjustments subject to **inner constraints,** $$\phi = v^T W v - 2k^T (Cx - g) \Rightarrow \text{minimum}$$
+ as thoroughly demonstrated in his article , see Reference
 
 | Points | Network Type | Sum(X) (m) | L2-Norm (m) | Trace(Qxx) |
 | :---:  | :---        | :---:      | :---:       | :---:      |

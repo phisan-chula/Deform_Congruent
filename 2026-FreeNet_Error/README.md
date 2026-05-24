@@ -9,3 +9,7 @@ GEODETIC NETWORK ADJUSTMENT DIAGNOSTIC SUMMARY (MARKDOWN FORMAT):
 | 4 | 'X'                       |    -20.240 |      10.795 | 4335.71799 |
 | 4 | 'Y'                       |     -8.097 |       6.908 | 4243.40853 |
 | 4 | 'Z'                       |     16.076 |       9.289 | 4606.41551 |
+
+<p align="center">
+  <img src="FreeNet_Deakin_All.svg" alt="FreeNet Deakin All Plot">
+</p>

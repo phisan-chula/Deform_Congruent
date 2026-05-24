@@ -68,13 +68,14 @@ def run_pure_freenet_numpy():
 
 
 def run_pure_freenet_lmfit():
-    """Free Network Adjustment via lmfit with manual rank-deficient error calculation."""
+    """Free Network Adjustment via lmfit with Option 2 Inner Constraint Regularization."""
     params = lmfit.Parameters()
     for pt in all_points:
         params.add(pt, value=0.000, vary=True)
         
     def residual_function(p, dataframe):
         res = []
+        # 1. Physical Observation Residuals
         for _, row in dataframe.iterrows():
             h_from = p[row['from']].value
             h_to = p[row['to']].value
@@ -82,40 +83,33 @@ def run_pure_freenet_lmfit():
             v_i = (h_to - h_from) - row['dh_m']
             sigma_i = np.sqrt(row['dist_km'] * 1000.0) 
             res.append(v_i / sigma_i)
+            
+        # 2. Inner Constraint (Option 2: Dynamic Weighting)
+        param_values = np.fromiter((param.value for param in p.values()), dtype=float)
+        centroid_residual = np.sum(param_values - 0.0)  # Center around 0.0 datum
+        
+        penalty_weight = np.sqrt(len(p)) * 1.0e4
+        res.append(penalty_weight * centroid_residual)
+        
         return np.array(res)
 
     out = lmfit.minimize(residual_function, params, args=(df,), method='leastsq')
+    print("\n=== LMFIT NATIVE REPORT (CORRECTED STANDARD ERRORS) ===")
     print(lmfit.fit_report(out))
-    print( out.residual )
-    #import pdb;pdb.set_trace()    
+    
     elevations = {}
+    std_devs = {}
     for pt in all_points:
         elevations[pt] = out.params[pt].value
+        std_devs[pt] = out.params[pt].stderr if out.params[pt].stderr is not None else 0.0
         
-    x_mean = np.mean(list(elevations.values()))
-    for pt in all_points:
-        elevations[pt] -= x_mean
+    # --- METHOD 2: DIRECT COVARIANCE MATRIX TRACE EXTRACTOR ---
+    # Removes legacy manual layout recreation loops and pinv() math completely!
+    if out.covar is not None:
+        trace_Qxx = np.trace(out.covar) / out.redchi
+    else:
+        trace_Qxx = 0.0
         
-    # --- Geodetic fix utilizing out.residual directly ---
-    n_obs = len(df)
-    n_unk = len(all_points)
-    
-    # 1. Compute sigma0_sq directly from the squared sum of lmfit's internal residuals
-    dof = n_obs - (n_unk - 1)
-    sigma0_sq = np.sum(out.residual ** 2) / dof
-    
-    # 2. Rebuild geometric configuration to map the pseudo-inverse cofactor matrix
-    A = np.zeros((n_obs, n_unk))
-    P = np.diag(1.0 / (df['dist_km'] * 1000.0))
-    for i, row in df.iterrows():
-        A[i, point_idx[row['to']]] = 1
-        A[i, point_idx[row['from']]] = -1
-        
-    conf_matrix = sigma0_sq * np.linalg.pinv(A.T @ P @ A)
-    std_errors = np.sqrt(np.diag(conf_matrix))
-    
-    std_devs = {pt: std_errors[point_idx[pt]] for pt in all_points}
-    trace_Qxx = np.trace(np.linalg.pinv(A.T @ P @ A))
     return elevations, std_devs, trace_Qxx
 
 
@@ -233,12 +227,12 @@ def generate_comparison_summary():
     """Computes adjustments across all scenarios and prints an absolute Markdown Table."""
     summary_rows = []
     
-    # 1. Pure Freenet Scenario via LMFIT Engine
+    # 1. Pure Freenet Scenario via LMFIT Engine (Using clean direct trace calculation)
     elev_lm, _, trace_lm = run_pure_freenet_lmfit()
     x_lm = np.array(list(elev_lm.values()))
     summary_rows.append({
         'Points': len(all_points),
-        'Fixed Point': 'none (LMFIT)',
+        'Fixed Point': 'none (LMFIT Refactored)',
         'Sum(X)': np.sum(x_lm),
         'L2-Norm': np.linalg.norm(x_lm),
         'Trace(Qxx)': trace_lm

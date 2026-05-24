@@ -1,5 +1,9 @@
 GEODETIC NETWORK ADJUSTMENT DIAGNOSTIC SUMMARY:
 
+<p align="center">
+  <img src="DeakFreenet.png" alt="FreeNet Deakin All Plot">
+</p>
+
 | Points | Fixed Point | Sum(X) (m) | L2-Norm (m) | Trace(Qxx) |
 | :---:  | :---        | :---:      | :---:       | :---:      |
 | 5 | none (LMFIT)              |      0.000 |       5.883 | 2337.50649 |

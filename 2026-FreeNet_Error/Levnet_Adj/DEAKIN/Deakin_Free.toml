@@ -1,0 +1,33 @@
+#
+#
+# Example of FREE NET LEVEL ADJUSTMENT 
+# Deakin , Geospatial Science, RMIT
+#
+#
+[Metadata]
+description = "Example Free Net"
+misc_tol = 12   # mm * sqrt(km)
+crs = "EPSG:32647"
+
+[Fixed]
+#A = 100.000
+
+[Position]
+A = [501000.0, 1530000.0]
+Y = [505000.0, 1530000.0]
+X = [504500.0, 1532200.0]
+Z = [506800.0, 1527800.0]
+B = [508600.0, 1529600.0]
+C = [502000.0, 1531000.0]
+
+[Differential]
+# Format: [LineNo, From, To, Diff_m, Dist_km]
+lines = [
+  [1, "A", "X", 6.345, 1.6],
+  [2, "B", "X", 4.235, 2.5],
+  [3, "Z", "B", 3.060, 1.0],
+  [4, "Z", "A", 0.920, 4.0],
+  [5, "A", "Y", 3.895, 1.6],
+  [6, "Y", "X", 2.410, 1.25],
+  [7, "Z", "Y", 4.820, 2.0]
+]

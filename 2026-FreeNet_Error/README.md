@@ -29,15 +29,23 @@ Where:
 *   $Q_{xx}$ is the pseudo-inverse of the normal equations matrix ($N^+$).
 *   $q_{x_i x_i}$ represents the variance factors of the adjusted coordinates.
 
-
+### Example of a Levelling Network
 <p align="center">
   <img src="DeakFreenet.png" alt="FreeNet Deakin All Plot">
 </p>
 
-| Points | Fixed Point | Sum(X) (m) | L2-Norm (m) | Trace(Qxx) |
+### Implementation Details
+
+This software implementation relies on the following core components:
+*   **`lmfit`**: An advanced Python package utilized for robust least-squares adjustments.
+*   **`numpy`**: Employed for matrix computations, specifically leveraging the **Moore-Penrose pseudo-inverse** ($N^+$) to solve the rank-deficient system of equations.
+
+The mathematical core closely follows the linear algebra framework established by **Dr. Deakin** for solving network adjustments subject to inner constraints, as thoroughly demonstrated in his article.
+
+| Points | Network Type | Sum(X) (m) | L2-Norm (m) | Trace(Qxx) |
 | :---:  | :---        | :---:      | :---:       | :---:      |
-| 5 | none (LMFIT)              |      0.000 |       5.883 | 2337.50649 |
-| 5 | none (MoorPseudoPenrose)  |      0.000 |       5.883 | 2337.50649 |
+| 5 | FreeNet using LMFIT              |      0.000 |       5.883 | 2337.50649 |
+| 5 | FreeNet (MoorPseudoPenrose)  |      0.000 |       5.883 | 2337.50649 |
 | 4 | 'A'                       |     11.439 |       7.796 | 4834.65067 |
 | 4 | 'B'                       |      0.821 |       5.894 | 5354.87221 |
 | 4 | 'X'                       |    -20.240 |      10.795 | 4335.71799 |

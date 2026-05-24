@@ -52,6 +52,13 @@ The original mathematical core closely follows the linear algebra framework esta
 | 4 | 'Y'                       |     -8.097 |       6.908 | 4243.40853 |
 | 4 | 'Z'                       |     16.076 |       9.289 | 4606.41551 |
 
+### Key Insights from the Comparison Table
+*   **Identical Implementation**: `FreeNet lmfit` and `FreeNet pseudo-inverse` yield identical metrics, proving that your `lmfit` implementation perfectly replicates the Moore-Penrose pseudo-inverse mathematical method.
+*   **Zero Centroid Shift**: The Free Network methods maintain a `Sum(X)` of exactly **$0.000\text{ m}$**, confirming that inner constraints successfully preserve the geometric center of the network.
+*   **Minimum Coordinate Distortion**: Free Network methods achieve the lowest geometric shift (**$L_2\text{-Norm} = 5.883\text{ m}$**), while fixing single datum points (e.g., point 'X') forces significantly larger coordinate distortions (up to $10.795\text{ m}$).
+*   **Maximum Network Precision**: Free Network methods yield the lowest global variance (**$\text{Trace}(Q_{xx}) = 2337.51$**), mathematically proving they deliver the highest possible precision across the adjusted points compared to any single-point fixation.
+
+
 <p align="center">
   <img src="FreeNet_Deakin_All.svg" alt="FreeNet Deakin All Plot">
 </p>

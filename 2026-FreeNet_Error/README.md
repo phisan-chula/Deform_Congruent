@@ -1,4 +1,4 @@
-GEODETIC NETWORK ADJUSTMENT DIAGNOSTIC SUMMARY (MARKDOWN FORMAT):
+GEODETIC NETWORK ADJUSTMENT DIAGNOSTIC SUMMARY:
 
 | Points | Fixed Point | Sum(X) (m) | L2-Norm (m) | Trace(Qxx) |
 | :---:  | :---        | :---:      | :---:       | :---:      |
